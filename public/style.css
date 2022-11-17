@@ -1,6 +1,14 @@
-
+body{
+    width: 100vw;
+}
 .mail{
     padding: 10px;
     border-radius: 50%;
     color: white;
+}
+button[id^='vote']:disabled{
+    cursor: grab;
+}
+button[id^='vote']{
+    cursor:grab;
 }

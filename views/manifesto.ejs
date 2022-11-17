@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
   <body>
@@ -63,7 +64,7 @@
             <div class="modal-footer d-flex flex-row justify-content-around">
               
               <button type="button" class="col-5 btn btn-outline-secondary" data-bs-dismiss="modal">cancel</button>
-              <button type="submit" class="col-5 btn btn-primary" data-bs-dismiss="modal"   name="candidate" value="<%= name %> "   >Confirm Vote</button>
+              <button type="submit" id="vote" disabled  class="col-5 btn btn-primary" data-bs-dismiss="modal"   name="candidate" value="<%= name %> "   >Confirm Vote</button>
               
             </div>
           </form>
@@ -82,6 +83,7 @@
         async function clickphoto(id){
          let canvas=document.getElementById('canvas');
           canvas.style.display = "block"
+          document.getElementById('vote').disabled = false
           let video = document.getElementById('video')
           document.getElementById('retake').style.display = "block"
           document.getElementById('click-photo').style.display = "none"
@@ -95,6 +97,7 @@
         console.log(image_data_url);
         }
         retake =(id)=>{
+          document.getElementById('vote').disabled = true
           document.getElementById('click-photo').style.display = "block"
           document.getElementById('retake').style.display = "none"
           document.getElementById('canvas').style.display = "none"

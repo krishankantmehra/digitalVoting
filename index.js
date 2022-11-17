@@ -103,7 +103,7 @@ app.get( '/auth/google/callback',
 app.get('/protected', isLoggedIn, (req, res) => {
   let email=req.user.email;
   name=req.user.given_name;
-  if(email==="k19je0450.19je0450@cse.iitism.ac.in"){
+  if(email==="krishankantmehra23@gmail.com"){
     res.redirect("/admin");
   }else if(email.substring(email.length-13)===".iitism.ac.in"){
     res.render("candidates",{name: name,triggerModal:'0'});
